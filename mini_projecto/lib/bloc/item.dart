@@ -2,31 +2,19 @@ import 'dart:async';
 
 class Item{
 
-  String name;
-  int quantity;
-  String prince;
-  String urlPhoto;
+  String _name;
+  int _quantity;
+  String _price;
+  String _urlPhoto;
 
-  Item(this.name, this.quantity, this.prince, this.urlPhoto);
+  Item(this._name, this._quantity, this._price, this._urlPhoto);
 
-List<Item> items = [
-Item("Coca-Cola", 2, "1,20€", "assets\Coca-Cola.jpg"),
-Item("Melancia", 1, "3,50€", "assets\Melancia.jpg"),
-];
-}
+  //getters
+  String get name => this.name;
+  int get quantity => this.quantity;
+  String get price => this.price;
+  String get urlPhoto => this.urlPhoto;
 
-class DataSource{
-  final _datasource = [];
-  static DataSource _instance;
-  DataSource._internal();
 
-  static DataSource getInstance(){
-    if(_instance == null){
-      _instance = DataSource._internal();
-    }
-    return _instance;
-  }
-
-  List getAll() => _datasource;
 }
 
