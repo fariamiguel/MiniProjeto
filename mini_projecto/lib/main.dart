@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'bloc/item.dart';
 import 'bloc/itembloc.dart';
+import 'form.dart';
 
 void main() => runApp(MyApp());
 
@@ -86,25 +87,37 @@ class _HomePageState extends State<HomePage> {
           }
         ),
       ),
-      floatingActionButton: SpeedDial(
-        shape: CircleBorder(),
-        animatedIcon: AnimatedIcons.menu_close,
-        children: [
-          SpeedDialChild(
-            child: Icon(Icons.add),
-            backgroundColor: Colors.deepOrange,
-            label: 'Add Item',
-            onTap: () => print('Add Item')
-          ),
-          SpeedDialChild(
-            child: Icon(Icons.remove),
-            backgroundColor: Colors.deepPurple,
-            label: 'Remove Item',
-            onTap: () => print('Remove Item')
-          ),
-        ],
-      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        backgroundColor: Colors.deepOrange,
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return Form();
+        }));
+    },
+      )
     );
   }
    }
 
+//floatingActionButton: SpeedDial(
+//shape: CircleBorder(),
+//animatedIcon: AnimatedIcons.menu_close,
+//children: [
+//SpeedDialChild(
+//child: Icon(Icons.add),
+//backgroundColor: Colors.deepOrange,
+//label: 'Add Item',
+//onTap: () => print('Add Item'),
+//onPressed:(){
+//Navigator
+//}
+//),
+//SpeedDialChild(
+//child: Icon(Icons.remove),
+//backgroundColor: Colors.deepPurple,
+//label: 'Remove Item',
+//onTap: () => print('Remove Item')
+//),
+//],
+//),
